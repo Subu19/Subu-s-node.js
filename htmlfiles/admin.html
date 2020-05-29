@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+       body{
+            color:black;
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            background-color:gainsboro;
+            background-size:100%, 100%;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .nevi {
+          background-color:cadetblue;
+          height:60px;
+          width: 100%;
+
+        }
+        .nevi ul{
+
+
+            float: right;
+        }
+        .nevi ul li{
+            text-align: center;
+            display: inline-block;
+            margin: 5px;
+            background-color: cadetblue;
+            height: 35px;
+            width: 150px;
+        }
+        .nevi ul li:hover {
+            transform-origin: center;
+            transition: 0.2s;
+            height: 50px;
+            color: white;
+
+         
+        }
+        .nevi ul li:hover a {
+            transform-origin: center;
+            transition: 0.2s;
+            color: white;
+
+         
+        }
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color:black;
+
+        }
+        .logo{
+            border-radius: 5%;
+            height:50px;
+            width: 100px;
+        }
+        .logotext{
+            position: absolute;
+            left: 105px;
+            top: -2px;
+            color:white;
+        }
+        .formbox{
+            padding:10px;
+            margin-top: 100px;
+            background-color:seagreen;
+            box-shadow: 5px 3px 10px black;
+            width: 400px;
+            position:absolute;
+            left:35%;
+
+        }
+       
+        button{
+            background-color: crimson;
+            border:none;
+            border-radius: 5%;
+            height: 40px;
+            width:100px;
+            font-size: large;
+            color: white;
+            transition: 0.2s;
+
+        }
+        button:hover{
+            background-color: white;
+            color:black;
+            transition: 0.2s;
+        }
+        .input-area .product-name{
+            position:absolute ;
+            top: 20px;
+            height:25px;
+            width:300px;
+            transform-origin: left;
+            transition: 0.2s;
+            background: transparent;
+            z-index: 1;
+            color: white;
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: white;
+            border-width: 2px;
+
+
+            
+
+        }
+        .input-area .product-name:focus,
+        .input-area .product-name:valid{
+            border-bottom-style: solid;
+            border-top-style: none;
+            border-left: none;
+            border-right: none;
+            border-color:fuchsia;
+            border-width: 3px;
+
+            box-shadow: none;
+            transform-origin: left;
+            transition: 0.2s;
+            
+
+
+
+        }
+        .input-area label{
+            position:absolute;
+            top:0px;
+            font-weight: normal;
+            color: white;
+            font-size: medium;
+            transition: 0.2s;
+            border: none;
+            display: block;
+
+
+        }
+        .input-area .product-name:valid ~ label,
+        .input-area .product-name:focus ~ label
+        {
+            position:absolute;
+            color: greenyellow;
+            transform: translateY(-22px);
+        }
+        /* ------------discription------------- */
+        .Description .desc{
+            position:absolute ;
+            top: 82px;
+            height:25px;
+            width:300px;
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: white;
+            border-width: 2px;
+            transform-origin: left;
+            transition: 0.2s;
+            background: transparent;
+            z-index: 1;
+            color: white;
+
+            
+
+        }
+        .Description .desc:focus,
+        .Description .desc:valid{
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color:fuchsia;
+            border-width: 3px;
+            
+            box-shadow: none;
+            transform-origin: left;
+            transition: 0.2s;
+            
+
+
+
+        }
+        .Description label{
+            position:absolute;
+            top:62px;
+            font-weight: normal;
+            color: white;
+            font-size: medium;
+            transition: 0.2s;
+            border: none;
+            display: block;
+
+
+        }
+        .Description .desc:valid ~ label,
+        .Description .desc:focus ~ label
+        {
+            position:absolute;
+            color: greenyellow;
+            transform: translateY(-22px);
+        }    
+        /* ----------------price ---------- */
+         .Price .price-text{
+            position:absolute ;
+            top: 135px;
+            height:25px;
+            width:300px;
+            transform-origin: left;
+            transition: 0.2s;
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: white;
+            border-width: 2px;
+            background: transparent;
+            z-index: 1;
+            color: white;
+
+            
+
+        }
+        .Price .price-text:focus,
+        .Price .price-text:valid{
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color:fuchsia;
+            border-width: 3px;
+            
+            box-shadow: none;
+            transform-origin: left;
+            transition: 0.2s;
+            
+
+
+
+        }
+        .Price label{
+            position:absolute;
+            top:116px;
+            font-weight: normal;
+            color: white;
+            font-size: medium;
+            transition: 0.2s;
+            border: none;
+            display: block;
+
+
+        }
+        .Price .price-text:valid ~ label,
+        .Price .price-text:focus ~ label
+        {
+            position:absolute;
+            color: greenyellow;
+            transform: translateY(-22px);
+        }
+        /* --------------image------------ */
+        .Image .image-text{
+            position:absolute ;
+            top: 195px;
+            height:25px;
+            width:300px;
+            transform-origin: left;
+            transition: 0.2s;
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: white;
+            border-width: 2px;
+            background: transparent;
+            z-index: 1;
+            color: white;
+
+        }
+        .Image .image-text:focus,
+        .Image .image-text:valid{
+            border-bottom-style: solid;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color:fuchsia;
+            border-width: 3px;
+            
+            box-shadow: none;
+            transform-origin: left;
+            transition: 0.2s;
+            
+
+
+
+        }
+        .Image label{
+            position:absolute;
+            top:175px;
+            font-weight: normal;
+            color: white;
+            font-size: medium;
+            transition: 0.2s;
+            border: none;
+            display: block;
+
+
+        }
+        .Image .image-text:valid ~ label,
+        .Image .image-text:focus ~ label
+        {
+            position:absolute;
+            color: greenyellow;
+            transform: translateY(-21px);
+        }
+      
+        
+   </style>
+    <title>my node.js</title>
+</head>
+<body>
+ 
+    <div class="nevi">
+        <img class="logo" src="craftnepal.png"><div class="logotext"><h2>Hamro Dokan</h2></div>
+          <ul>
+               <li><a href="/">HOME</a></li>
+               <li><a href="/products">Products</a></li>
+               <li><a href="/cart">Cart</a></li>
+
+
+
+               <li><a href="/addproduct">Add Pruduct</a></li>
+               <li><a href="/adminproduct">Admin Products</a></li>
+
+           </ul>
+       </div>
+    
+    <div class="formbox">
+
+
+                <form method="POST" action="/product">
+                    <div class="input-area">
+                        <input autocomplete="off" required="" class="product-name" type="text" name="title">
+                       <label> <h4>Product Name </h4> </label>
+
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="Description">
+                         <input type="test" required="" autocomplete="off" class="desc" name="desc">
+                         <label> <h4>Description </h4> </label>
+                </div>
+                <br> 
+                <div class="Price">
+                        <input required="" autocomplete="off" class="price-text" type="number" name="price">
+                        <label> <h4>Price </h4> </label>
+
+                    </div>       
+                        <br>
+                        <div class="Image">
+
+                        <input type="text" required="" class="image-text" autocomplete="off" name="image">
+                        <label> <h4>Image </h4> </label>
+                            </div>
+                        <br><br><br><br>
+                                <center><button type="submit">
+                                    Submit
+                                </button>
+                                </center>
+                            
+                </form>
+    </div>
+  
+</body>
+</html>

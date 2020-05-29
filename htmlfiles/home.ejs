@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0); 
+}
+        html {
+            scroll-behavior: smooth;
+
+        }
+        body{
+            color:black;
+            margin: 0px;
+            margin-top:70px;
+            text-decoration: none;
+            background:seagreen;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .nevi {
+
+            position: fixed;
+            top:0px;
+            background-color:cadetblue;
+            height:60px;
+            width: 100%;
+         
+
+        }
+        .nevi ul{
+
+
+            float: right;
+        }
+        .nevi ul li{
+            text-align: center;
+            display: inline-block;
+            margin: 5px;
+            margin-right: 20px;
+            
+            background-color: cadetblue;
+            height: 20px;
+            width: 150px;
+        }
+        .nevi ul li:hover {
+            transform-origin: center;
+            transition: 0.5s;
+            height: 50px;
+            color: white;
+        }
+        .nevi ul li:hover a {
+            transform-origin: center;
+            transition: 0.5s;
+            color: white;
+
+         
+        }
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color:black;
+
+        }
+        .logo{
+            border-radius: 5%;
+            height:50px;
+            width: 100px;
+        }
+        .logotext{
+            position: absolute;
+            left: 105px;
+            top: -2px;
+            color:white;
+        }
+        .products{
+            height: fit-content ;
+            margin-top: 40px;
+            margin-left: 20px;
+            height: auto;
+            float:left;
+            background-color: rgba(255,255,255, 0.5);
+            width: 300px;
+            box-shadow: 5px 10px 18px black;
+            padding-bottom: 10px;
+             
+        }
+        .product-img{
+            margin-top: 10px;
+            
+        }
+        .product-info{
+            margin: 10px;
+            background-color: rgba(255,255,255, 0.5);
+            border-radius: 5%;
+            height: 150px;
+            overflow: auto;
+            word-wrap: break-word;
+
+
+
+        }
+        .buy{
+            background-color: green;
+            color: white;
+            width:100px;
+            height:50px;
+            border-style: solid;
+            border-color:green;
+            border-radius: 10%;
+            font-size: large;
+            overflow: auto;
+            word-wrap: break-word;
+
+
+        }
+        .buy:hover{
+            background-color: white;
+            transition: 0.3s;
+            color:black;
+        }
+        .overlay{
+            position: fixed;
+            top: 0px;
+            left:0px;
+            right: 0px;
+            bottom: 0px;
+            background-color: rgba(0,0,0,0);
+            visibility: hidden;
+            transition: 0.5s;
+
+
+        }
+        .overlay:target {
+            visibility: visible;
+            transition: 0.5s;
+            background-color: rgba(0,0,0,0.5);
+
+
+        }
+        .popup{
+            margin-top:0px;
+            max-height: 40%;
+            height: auto;
+            background-color: white;
+            border-radius: 50px;
+            width: 30%;
+            padding: 20px;
+
+        }
+        .overlay:target .popup{
+            margin-top: 15%;
+            transition: 0.5s;
+
+        }
+        .close:hover{
+            color:red;
+        }
+        audio{
+            visibility: hidden;
+        }
+      
+
+      
+    </style>
+    
+    <title>my node.js</title>
+</head>
+<body>
+   
+
+    <div class="nevi">
+        <img class="logo" src="craftnepal.png"><div class="logotext"><h2>Hamro Dokan</h2></div>
+          <ul>
+               <li><a href="/">HOME</a></li>
+               <li><a href="/products">Products</a></li>
+               <li><a href="/cart">Cart</a></li>
+
+
+
+               <li><a href="/addproduct">Add Pruduct</a></li>
+               <li><a href="/adminproduct">Admin Products</a></li>
+
+           </ul>
+       </div>
+
+   
+    <% if(prods.length > 0) { %>
+        <% for(let product of prods){ %>
+
+                    <div class="products">
+
+                            <center>
+                            <img src="blackcap.jpg" class="product-img" height="150px" width="150px">
+                            <div class="product-info">
+                                <h2><%= product.title %></h2> 
+                                <h5>
+                                    <%= product.desc %>
+                                </h5>
+                            </div>
+                            <centre><a href="#popup1"><button class="buy">Buy at <%= product.price %></button></a></centre>
+
+                        </center>
+                    </div>
+
+
+         
+
+
+                    <% } %>
+
+    <% } else { %>
+    <h1>
+        Product not found!
+    </h1>
+    <% } %>
+    <div class="overlay" id="popup1">
+        <center><div class="popup">
+            <h3 style="color:greenyellow">Success!</h3>		
+            <div class="popup-content">
+                <h3 style="color: teal">Bought Successfully!✔
+                <h3>
+                <br>
+                <p><h3>Please visit us again!</h3></p>
+                <a style="font-size: larger;" class="close" href="/">✘[close]</a>
+
+
+            </div>
+        </div>
+        </center>
+    </div>
+
+    
+</body>
+</html>
