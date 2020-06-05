@@ -15,6 +15,8 @@ const path = require('path');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/products/:productId', express.static(path.join(__dirname, 'public')));
+app.use('/editproduct/:productId', express.static(path.join(__dirname, 'public')));
+
 
 app.use(adminData);
 app.use(shopRoutes);

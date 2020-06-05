@@ -30,19 +30,38 @@
             margin: 0px;
             margin-top:70px;
             text-decoration: none;
-            background:seagreen;
+            background-color:#269;
+            background-image: linear-gradient(white 2px, transparent 2px),
+            linear-gradient(90deg, white 2px, transparent 2px),
+            linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+			font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color:#269;
+            background-image: linear-gradient(white 2px, transparent 2px),
+            linear-gradient(90deg, white 2px, transparent 2px),
+            linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+            color:black;
+            margin: 0px;
+            margin-top:70px;
+            text-decoration: none;
             background-attachment: fixed;
-            background-size: cover;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .nevi {
 
             position: fixed;
             top:0px;
-            background-color:cadetblue;
+            background-color:black;
             height:60px;
             width: 100%;
-         
+            z-index: 1000;
+            color: white;
 
         }
         .nevi ul{
@@ -56,27 +75,28 @@
             margin: 5px;
             margin-right: 20px;
             
-            background-color: cadetblue;
+            background-color: black;
             height: 20px;
             width: 150px;
+            color: white;
         }
         .nevi ul li:hover {
             transform-origin: center;
-            transition: 0.5s;
+            transition: 0.2s;
             height: 50px;
             color: white;
         }
         .nevi ul li:hover a {
             transform-origin: center;
-            transition: 0.5s;
-            color: white;
+            transition: 0.2s;
+            color: orange;
 
          
         }
         a{
             text-decoration: none;
             font-weight: bold;
-            color:black;
+            color: white;
 
         }
         .logo{
@@ -90,103 +110,115 @@
             top: -2px;
             color:white;
         }
-        .products{
-            height: fit-content ;
-            margin-top: 40px;
-            margin-left: 20px;
-            height: auto;
-            float:left;
-            background-color: rgba(255,255,255, 0.5);
-            width: 300px;
-            box-shadow: 5px 10px 18px black;
-            padding-bottom: 10px;
-             
-        }
-        .product-img{
-            margin-top: 10px;
-            
-        }
-        .product-info{
-            margin: 10px;
-            background-color: rgba(255,255,255, 0.5);
-            border-radius: 5%;
-            height: 150px;
-            overflow: hidden;
-            word-wrap: break-word;
+        .product{
+				margin: 0px;
+				height: 300px;
+				width: 300px;
+				background: cyan;
+				margin-top: 50px;
+                margin-left: 20px;
+    			padding: 0px;
+    			transition: 0.7s;
+    			overflow: hidden;
+    			box-shadow: 4px 3px 10px black;
+    			float: left;
+                animation: onload 1s;
+    			
+
+
+			}
+            @keyframes onload{
+				from{
+					transform: translateY(-20px);
+				}
+				to{
+					transform: translateY(0px);
+				}
+
+			}
+			.product:hover {
+				transform: translateY(-10px);
+				transition: 0.2s;
+			}
+			.text::before{
+				visibility: hidden;
+				order: 1;
+				z-index: 1;
+				color: black;
 
 
 
-        }
-        .buy{
-            background-color: green;
-            color: white;
-            width:100px;
-            height:50px;
-            border-style: solid;
-            border-color:green;
-            border-radius: 10%;
-            font-size: large;
-            overflow: auto;
-            word-wrap: break-word;
+
+			}
+			.product:hover .text{
+				visibility: visible;
+				background-color: cyan;
+				transform: translateY(-300px);
+				transition: 0.7s ease-in;
+				height: 300px;
 
 
-        }
-        .buy:hover{
-            background-color: white;
-            transition: 0.3s;
-            color:black;
-        }
-        .overlay{
+			}
+			.image{
+				height: 100%;
+				width: 100%;
+				margin:0px;
+				padding: 0px;
+				background: black;
+
+				
+
+
+			}
+			.product:hover .image{
+				transform: translateY(-300px);
+				transition: 0.7s ease-in-out;
+			}
+			.desc{
+				height: 200px;
+				margin-top: 0px;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+
+			}
+			button{
+				height: 30px;
+				width: 100px;
+				border: none;
+				background-color: crimson;
+				font-size: medium;
+				margin-left: 20px;
+
+			}
+			button:hover{
+				background-color: white;
+				border-style: solid;
+				border-width: 2px;
+				transition: 0.2s ease-in-out;
+
+			}
+			.title{
+				color:white;
+				font-style: large;
+				margin-top: -50px;
+
+				height: 60px;
+				width: 100%;
+				background-image: linear-gradient(to top, rgb(0,255,255), rgba(0,0,255,0));
+			}
+        .background{
             position: fixed;
             top: 0px;
-            left:0px;
-            right: 0px;
             bottom: 0px;
-            background-color: rgba(0,0,0,0);
-            visibility: hidden;
-            transition: 0.5s;
-
-
+            left: 0px;
+            right: 0px;
+            background: rgba(0,0,0,0.6);
+            z-index: -10;
         }
-        .overlay:target {
-            visibility: visible;
-            transition: 0.5s;
-            background-color: rgba(0,0,0,0.5);
-
-
-        }
-        .popup{
-            margin-top:0px;
-            max-height: 40%;
-            height: auto;
-            background-color: white;
-            border-radius: 50px;
-            width: 30%;
-            padding: 20px;
-
-        }
-        .overlay:target .popup{
-            margin-top: 15%;
-            transition: 0.5s;
-
-        }
-        .close:hover{
-            color:red;
-        }
-        .details{
-            border: none;
-            background-color: cadetblue;
-            height: 20px;
-            width: 70px;
-
-            
-        }
-        .details:hover{
-            background-color: crimson;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-      
 
       
     </style>
@@ -194,7 +226,8 @@
     <title>my node.js</title>
 </head>
 <body>
-   
+    <div class="background"></div>
+
 
     <div class="nevi">
         <img class="logo" src="craftnepal.png"><div class="logotext"><h2>Hamro Dokan</h2></div>
@@ -214,10 +247,55 @@
    
     <% if(prods.length > 0) { %>
         <% for(let product of prods){ %>
+            <div class="product">
+		        <div class="image">
+					<img src="<%= product.image%>" height="100%" width="100%">
+					
+					<h2 class="title"><%= product.title%></h2>
 
-                    <div class="products">
+					
+				</div>
+				<div class="text">
 
-                            <center>
+					<div class="desc">
+						<h2 style="color: black; margin-left: 20px;"><%= product.title%></h2>
+						<p style="color: black; margin:20px; overflow: hidden;">
+                        <%= product.desc %>
+                        </p>
+					</div>
+						
+						<p style="color:green; margin-left: 20px; font-weight: bold;">Rs.<%= product.price%></p>
+						
+						<a href="/products/<%= product.id%>"><button>Read More</button></a>
+
+				</div>
+            </div>
+
+
+                    <!-- <div class="products" id="products">
+                        <center>
+                         <img src="<%= product.image%>" class="product-img" width="90%" height="200px">
+                        
+                        </center>
+                        <div class="product-info">
+                            <img src="<%= product.image%>" width="100%" height="100%">
+
+                             <div class="product-info2"> <h2 class="title"><%= product.title %>
+                                <a href="/products/<%= product.id%>"><button class="details">➤</button></a>
+                            </h2> 
+                            <h3 style="color: green; margin-left:10px;">Rs.<%= product.price %></h3>
+                             <h5 class="desc"> <%= product.desc %></h5>
+                                </div>
+
+
+
+                        
+                        </div> -->
+                        
+
+
+
+                            <!-- <center>
                             <img src="<%= product.image%>" class="product-img" height="150px" width="150px">
                             <div class="product-info">
                                 <h2><%= product.title %></h2> 
@@ -229,10 +307,10 @@
                             <form method="POST" action="/cart">
                                 <input type="hidden" name="productId" value="<%= product.id %>">
 
-                            <centre><a href="#popup1"><button class="buy">Buy at <%= product.price %></button></a></centre>
+                            <centre><button class="buy">Buy at <%= product.price %></button></centre>
                                </form> 
-                        </center>
-                    </div>
+                        </center> -->
+                    
                     
 
          
@@ -245,7 +323,7 @@
         Product not found!
     </h1>
     <% } %>
-    <div class="overlay" id="popup1">
+    <!-- <div class="overlay" id="popup1">
         <center><div class="popup">
             <h3 style="color:greenyellow">Success!</h3>		
             <div class="popup-content">
@@ -259,7 +337,8 @@
             </div>
         </div>
         </center>
-    </div>
+    </div> -->
+   
 
     
 </body>

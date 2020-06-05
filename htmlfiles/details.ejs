@@ -3,23 +3,42 @@
 <head>
     <style>
         body{
+            margin: 0px;
+            margin-top:70px;
+            text-decoration: none;
+            background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color:#269;
+            background-image: linear-gradient(white 2px, transparent 2px),
+            linear-gradient(90deg, white 2px, transparent 2px),
+            linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
             color:black;
             margin: 0px;
             margin-top:70px;
             text-decoration: none;
-            background:seagreen;
             background-attachment: fixed;
-            background-size: cover;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .nevi {
 
             position: fixed;
             top:0px;
-            background-color:cadetblue;
+            background-color:black;
             height:60px;
             width: 100%;
-         
+            z-index: 1000;
+            color: white;
 
         }
         .nevi ul{
@@ -33,27 +52,28 @@
             margin: 5px;
             margin-right: 20px;
             
-            background-color: cadetblue;
+            background-color: black;
             height: 20px;
             width: 150px;
+            color: white;
         }
         .nevi ul li:hover {
             transform-origin: center;
-            transition: 0.5s;
+            transition: 0.2s;
             height: 50px;
             color: white;
         }
         .nevi ul li:hover a {
             transform-origin: center;
-            transition: 0.5s;
-            color: white;
+            transition: 0.2s;
+            color: orange;
 
          
         }
         a{
             text-decoration: none;
             font-weight: bold;
-            color:black;
+            color: white;
 
         }
         .logo{
@@ -92,7 +112,7 @@
             text-align: center;
         }
         button{
-            height: 30px;
+            height: 40px;
             width: 100px;
             background-color: crimson;
             border: none;
@@ -104,7 +124,7 @@
             border-style: solid;
             border-width: 2px;
             border-color: black;
-            transition: 0.5s;
+            transition: 0.2s;
             color: black;
         }
     </style>
@@ -131,7 +151,7 @@
                 <h1><%= product.title %></h1>
             </div>
             <div class="productImage">
-                <img src="<%= product.image %>" height="500px" width="500px">
+               <center> <img src="<%= product.image %>" height="500px" width="500px"></center>
 
             </div>
             <div class="desc">

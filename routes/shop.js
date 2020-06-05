@@ -10,5 +10,7 @@ router.get('/', controller.getIndex);
 router.get('/cart', controller.getCarts);
 router.post('/cart', controller.postcart);
 router.get('/products/:productId', controller.getproductId);
+router.post('/cart-delete', controller.cartDeleteProduct);
+
 
 module.exports = router;

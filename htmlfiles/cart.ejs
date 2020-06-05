@@ -7,19 +7,21 @@
             margin: 0px;
             margin-top:70px;
             text-decoration: none;
-            background:seagreen;
+            background:white;
             background-attachment: fixed;
             background-size: cover;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+       
         .nevi {
 
             position: fixed;
             top:0px;
-            background-color:cadetblue;
+            background-color:black;
             height:60px;
             width: 100%;
-         
+            z-index: 1000;
+            color: white;
 
         }
         .nevi ul{
@@ -33,27 +35,28 @@
             margin: 5px;
             margin-right: 20px;
             
-            background-color: cadetblue;
+            background-color: black;
             height: 20px;
             width: 150px;
+            color: white;
         }
         .nevi ul li:hover {
             transform-origin: center;
-            transition: 0.5s;
+            transition: 0.2s;
             height: 50px;
             color: white;
         }
         .nevi ul li:hover a {
             transform-origin: center;
-            transition: 0.5s;
-            color: white;
+            transition: 0.2s;
+            color: orange;
 
          
         }
         a{
             text-decoration: none;
             font-weight: bold;
-            color:black;
+            color: white;
 
         }
         .logo{
@@ -67,6 +70,41 @@
             top: -2px;
             color:white;
         }
+        .products{
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 10px;
+            width: 200px;
+            height: 350px;
+            margin: 20px;
+            float: left;
+        }
+        .products:hover{
+            transform: scale(1.02);
+            box-shadow: 2px 4px 10px black;
+            transition: 0.2s;
+
+        }
+        button{
+
+            height: 30px;
+            width: 70px;
+            background-color: crimson;
+            color: white;
+            font-size: large;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+            transition: 0.2;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 2px;
+         }
     </style>
     
     <title>Cart</title>
@@ -86,5 +124,45 @@
 
            </ul>
        </div>
+       
+
+       <main>
+           <% if (products.length > 0) { %>
+                <% products.forEach(p => { %>
+                    <div class="products">
+                        <center>
+                            <img src="<%= p.productData.image %>" height="200px" width="200px">
+                            <br><h2 style="color: green;"><%= p.productData.title %> (<%= p.qty %>)</h2>
+                            <br>
+                            <form method="POST" action="/cart-delete">
+                                <input type="hidden" value="<%= p.productData.id %>" name="productId">
+                                <input type="hidden" value="<%= p.productData.price%>" name="price">
+                                <button type="submit">Delete</button>
+                            
+                        </form>
+                        
+                        </center>
+                    </div>
+
+
+                <% }) %>
+               
+            <% } else { %>
+            <center>
+            <img src="emptycart.png" height="300px" width="400px">
+            <h1 style="font-weight: bold;">Looks like cart is empty.</h1>
+            <h6>Feed it more!</h6>    
+            
+            </center>
+
+            <% } %>
+
+
+
+
+       </main>
+
+
+
 </body>
 </html>
