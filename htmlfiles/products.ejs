@@ -249,7 +249,7 @@
         <% for(let product of prods){ %>
             <div class="product">
 		        <div class="image">
-					<img src="<%= product.image%>" height="100%" width="100%">
+					<img src="<%= product.imageUrl%>" height="100%" width="100%">
 					
 					<h2 class="title"><%= product.title%></h2>
 
@@ -260,7 +260,7 @@
 					<div class="desc">
 						<h2 style="color: black; margin-left: 20px;"><%= product.title%></h2>
 						<p style="color: black; margin:20px; overflow: hidden;">
-                        <%= product.desc %>
+                        <%= product.description %>
                         </p>
 					</div>
 						
