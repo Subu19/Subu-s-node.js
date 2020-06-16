@@ -7,6 +7,7 @@
             margin: 0px;
             padding: 0px;
             text-decoration: none;
+            cursor: url("cursor4.png"), auto;    
             background-color:gainsboro;
             background-size:100%, 100%;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -49,6 +50,7 @@
             transform-origin: center;
             transition: 0.2s;
             color: orange;
+            cursor: url("cursor5.png"), auto; 
 
          
         }
@@ -89,6 +91,7 @@
             font-size: large;
             color: white;
             transition: 0.2s;
+            cursor: url("cursor5.png"), auto; 
 
         }
         button:hover{
@@ -338,7 +341,7 @@
                <li><a href="/products">Products</a></li>
                <li><a href="/cart">Cart</a></li>
 
-
+               <li><a href="/orders">Orders</a></li>
 
                <li><a href="/addproduct">Add Pruduct</a></li>
                <li><a href="/adminproduct">Admin Products</a></li>
@@ -359,7 +362,7 @@
                     <br>
                     <br>
                     <div class="Description">
-                         <textarea type="test" required="" autocomplete="off" class="desc" name="desc"><% if (editmode) { %> <%= product.desc %><% } %></textarea>
+                         <textarea type="test" required="" autocomplete="off" class="desc" name="desc"><% if (editmode) { %> <%= product.description %><% } %></textarea>
                          <label> <h4>Description </h4> </label>
                 </div>
                 <br> 
@@ -372,7 +375,7 @@
                         <br>
                         <div class="Image">
 
-                        <input type="text" required="" class="image-text" autocomplete="off" name="image" value="<% if (editmode) { %> <%= product.image %><% } %>">
+                        <input type="text" required="" class="image-text" autocomplete="off" name="image" value="<% if (editmode) { %> <%= product.imageUrl %><% } %>">
                         <label> <h4>Image </h4> </label>
                             </div>
                         <br><br><br><br>
