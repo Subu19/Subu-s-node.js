@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style>
 /* width */
 ::-webkit-scrollbar {
@@ -101,6 +102,8 @@
             text-decoration: none;
             font-weight: bold;
             color: white;
+            cursor: url("cursor5.png"), auto; 
+
 
 
         }
@@ -126,13 +129,15 @@
     			transition: 0.7s;
     			overflow: hidden;
     			box-shadow: 4px 3px 10px black;
+                
+
     			float: left;
-                animation: onload 1s;
+                /* animation: onload 1s; */
     			
 
 
 			}
-            @keyframes onload{
+            /* @keyframes onload{
 				from{
 					transform: translateY(-20px);
 				}
@@ -140,7 +145,7 @@
 					transform: translateY(0px);
 				}
 
-			}
+			} */
 			.product:hover {
 				transform: translateY(-10px);
 				transition: 0.2s;
@@ -221,6 +226,7 @@
             top: 0px;
             bottom: 0px;
             left: 0px;
+            
             right: 0px;
             background: rgba(0,0,0,0.6);
             z-index: -10;
@@ -253,7 +259,8 @@
    
     <% if(prods.length > 0) { %>
         <% for(let product of prods){ %>
-            <div class="product">
+            <a href="/products/<%= product.id%>">
+            <div class="product" id="product">
 		        <div class="image">
 					<img src="<%= product.imageUrl%>" height="100%" width="100%">
 					
@@ -275,7 +282,7 @@
 						<a href="/products/<%= product.id%>"><button>Read More</button></a>
 
 				</div>
-            </div>
+            </div></a>
 
 
                     <!-- <div class="products" id="products">
@@ -345,6 +352,26 @@
         </center>
     </div> -->
    
+<script type="text/javascript">
+ 
+    $(document).ready(function(){
+       
+
+
+
+         for(var i=0;i<6;i++)
+        {
+           
+             var thetime = 800 *i;
+            
+             document.getElementsByClassName("product")[i].style.transform = "translateY(10px)" ; // or use .fadeIn()
+             thetime = thetime * i;
+         }
+    });
+   
+   
+   
+   </script>
 
     
 </body>

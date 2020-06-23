@@ -117,12 +117,22 @@
             border: none;
             cursor: pointer;
             border-radius: 10px;
+            margin-top: 20px;
              
          }
          .order:hover{
              transition: 0.2s;
              background-color: honeydew;
              cursor: url("cursor5.png"), auto; 
+         }
+         .footer{
+             position:absolute;
+             margin-bottom: 0px;
+            bottom: 0px;
+             height:70px;
+             width: 100%;
+             background-color: black;
+             color:white;
          }
     </style>
     
@@ -151,7 +161,7 @@
                     <div class="products">
                         <center>
                             <img src="<%= p.imageUrl %>" height="200px" width="200px">
-                            <br><h2 style="color: green;"><%= p.title %> (<%= p.cartItems.quantity %>)</h2>
+                            <br><h4 style="color: green;"><%= p.title %> (<%= p.cartItems.quantity %>)</h4>
                             <br>
                             <form method="POST" action="/cart-delete">
                                 <input type="hidden" value="<%= p.id %>" name="productId">
@@ -166,9 +176,11 @@
 
                 <% }) %>
                 <hr>
+                <footer class="footer">
                 <form action="/check-order" method="POST">
-                    <button class="order">Order Now</button>    
+                   <center> <button class="order">Order Now</button> </center>   
                 </form>
+                </footer>
                 
                 
                    
